@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
     Gracz gracze[3] = {Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen")}; // gracze
-    Gra kolory;
+    Gra kolory; // dorobicz
     Menu koloryGame;
     koloryGame.przetwarzacDane();
 
