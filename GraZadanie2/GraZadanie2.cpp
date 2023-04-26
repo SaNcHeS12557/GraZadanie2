@@ -16,10 +16,13 @@ using namespace std;
 #include "Menu.h"
 #include "Gra.h"
 
+// definicja gracze
+Gracz Gracz::gracze[3] = { Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen") };
+
 int main()
 {
-    Gracz gracze[3] = {Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen")}; // gracze
     //Gra kolory;
+
     Menu koloryGame;
     koloryGame.przetwarzacDane();
     koloryGame.nowaGra();
