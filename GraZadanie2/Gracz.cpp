@@ -14,8 +14,19 @@ using namespace std;
 
 #include "Gracz.h"
 
+
 // Konstruktor dla gracza
 Gracz::Gracz(string i) {
 	imie = i;
 }
+//
+
+
+// default Konstruktor dla gracza
+Gracz::Gracz() {}
+//
+
+
+// definicja gracze
+Gracz Gracz::gracze[3];
 //

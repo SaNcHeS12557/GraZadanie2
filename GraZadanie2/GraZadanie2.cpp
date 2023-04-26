@@ -19,10 +19,9 @@ using namespace std;
 int main()
 {
     Gracz gracze[3] = {Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen")}; // gracze
-    Gra kolory; // dorobicz
+    //Gra kolory;
     Menu koloryGame;
     koloryGame.przetwarzacDane();
-
     koloryGame.nowaGra();
 
     

@@ -15,6 +15,10 @@ using namespace std;
 #include "Gra.h"
 #include "Gracz.h"
 
+// Definition of static member variables
+int Gra::zgadl = 0;
+int Gra::kolejka = 0;
+
 void Gra::textPlayers()
 {
 	int i;
