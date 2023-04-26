@@ -17,15 +17,17 @@ using namespace std;
 #include "Gra.h"
 
 // definicja gracze
-Gracz Gracz::gracze[3] = { Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen") };
+Gracz Gracz::gracze[3] = { Gracz("Bryanusz"), Gracz("Jessica"), Gracz("Nepomucen") }; // tworzymy liste gracze
 
 int main()
 {
-    //Gra kolory;
+    //Gra kolory; jest potrebna tylko dla przetwarzania danych
 
-    Menu koloryGame;
-    koloryGame.przetwarzacDane();
-    koloryGame.nowaGra();
+    Menu koloryGame; // tworzymy gre
+    koloryGame.przetwarzacDane(); // otrzymujemy hasla
+
+
+    koloryGame.nowaGra(); // rozpoczynamy gre
 
     
 }

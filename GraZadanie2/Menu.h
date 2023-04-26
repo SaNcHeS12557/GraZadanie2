@@ -3,8 +3,6 @@ class Menu
 {
 public:
 	int n, i, j;
-	int suma = 0;
-	int kwota = 0;
 	char wybor;
 	string proba;
 	string rezultat;
@@ -18,5 +16,8 @@ public:
 	void przetwarzacDane();
 	int maska[100];
 	void nowaGra();
+private:
+	int suma = 0;
+	int kwota = 0;
 };
 
