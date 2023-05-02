@@ -16,6 +16,35 @@ using namespace std;
 #include "Gra.h"
 #include "Gracz.h"
 
+// OPRATOR NR.2
+ostream& operator<<(ostream& os, const Menu& menu) {
+	os << "1. zgaduj haslo" << endl;
+	os << "2. krecenie kolem" << endl;
+	return os;
+}
+//
+
+// OPERATOR NR. 3
+bool operator==(const Gracz& g1, const Gracz& g2) {
+	return g1.kasa == g2.kasa;
+}
+//
+
+// OPERATOR NR. 4
+istream& operator>>(istream& is, Gra& g) {
+	cout << Gracz::gracze[g.kolejka].imie << ": Podaj litere" << endl;
+	char literka = Gra::WczytajZnak();
+	return is;
+}
+//
+
+// OPERATOR NR. 5
+bool operator!=(const Gracz& g1, const Gracz& g2)
+{
+	return g1.portfel != g2.portfel;
+}
+//
+
 void Menu::przetwarzacDane() {
 
 	ifstream strum;
@@ -57,6 +86,7 @@ void Menu::przetwarzacDane() {
 }
 
 void Menu::nowaGra() {
+	Menu menu;
 	do
 	{
 		cout << "\033[47m" << "\033[31m";
@@ -87,8 +117,24 @@ void Menu::nowaGra() {
 
 		Gra::textPlayers();
 
-		cout << "1. zgaduj haslo" << endl;
-		cout << "2. krecenie kolem" << endl;
+		// OPERATOR NR. 2
+		cout << menu;
+		//
+
+		// OPERATOR NR. 3
+		if (Gracz::gracze[Gra::kolejka] == Gracz::gracze[Gra::kolejka+1]) {
+			cout << "\n" << Gracz::gracze[Gra::kolejka].imie << " ma taka sama kase jak i " << Gracz::gracze[Gra::kolejka + 1].imie << endl;
+		}
+		else {
+			cout << "\n" << Gracz::gracze[Gra::kolejka].imie << " ma inna kase niz " << Gracz::gracze[Gra::kolejka + 1].imie << endl;
+		}
+		//
+
+		// OPERATOR NR. 5 
+		if (Gracz::gracze[Gra::kolejka] != Gracz::gracze[Gra::kolejka + 1]) {
+			cout << "Portfel gracza " << Gracz::gracze[Gra::kolejka].imie << " jest rozny od portfela gracza " << Gracz::gracze[Gra::kolejka + 1].imie;
+		}
+		//
 
 		wybor = Gra::WczytajWybor();
 
@@ -150,9 +196,16 @@ void Menu::nowaGra() {
 
 		}
 
-		cout << Gracz::gracze[Gra::kolejka].imie << ": Podaj litere" << endl;
+		//cout << Gracz::gracze[Gra::kolejka].imie << ": Podaj litere" << endl;
 
-		literka = Gra::WczytajZnak();
+		//literka = Gra::WczytajZnak();
+
+
+		// OPERATOR NR. 4
+		Gra cinZnak;
+		cin >> cinZnak;
+		//
+
 
 		Gra::zgadl = 0;
 

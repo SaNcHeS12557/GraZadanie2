@@ -19,6 +19,15 @@ using namespace std;
 int Gra::zgadl = 0;
 int Gra::kolejka = 0;
 
+
+// OPERATOR NR. 1
+ostream& operator<<(ostream& os, const Gracz& gracz)
+{
+	os << gracz.imie << "\t" << gracz.kasa << "\n";
+	return os;
+}
+//
+
 void Gra::textPlayers()
 {
 	int i;
@@ -27,7 +36,7 @@ void Gra::textPlayers()
 		if (i == kolejka) {
 			cout << "\033[1;34m";
 		}
-		cout << Gracz::gracze[i].imie << "\t" << Gracz::gracze[i].kasa << "\n";
+		cout << Gracz::gracze[i]; // OPERATOR NR.1
 		cout << "\033[0m";
 
 	}

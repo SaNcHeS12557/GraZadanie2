@@ -25,3 +25,4 @@ Gracz::Gracz(string i) {
 // default Konstruktor dla gracza
 Gracz::Gracz() {}
 //
+
